@@ -24,5 +24,20 @@ namespace WordCounter.TestTools
       //Assert
       Assert.AreEqual(testString, result);
     }
+
+    [TestMethod]
+    public void IsInputValid_false()
+    {
+      //Arrange
+      RepeatCounter testCounter = new RepeatCounter();
+      string word = "Pizza.";
+
+      //Act
+      bool isValid = testCounter.IsInputValid(word);
+
+      //Assert
+      Assert.AreEqual(false, isValid);
+
+    }
   }
 }

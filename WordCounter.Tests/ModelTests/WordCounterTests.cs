@@ -37,7 +37,6 @@ namespace WordCounter.TestTools
 
       //Assert
       Assert.AreEqual(false, isValid);
-
     }
   }
 }

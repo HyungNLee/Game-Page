@@ -1,3 +1,5 @@
+using System;
+
 namespace WordCounter
 {
   public class RepeatCounter
@@ -24,5 +26,21 @@ namespace WordCounter
     {
       return _sentence;
     }
+
+    public bool IsInputValid(string word)
+    {
+      bool isValidWord = true;
+      foreach (char c in word)
+      {
+        if (char.IsPunctuation(c))
+        {
+          isValidWord = false;
+          return isValidWord;
+        }
+      }
+      return isValidWord;
+    }
+
+    
   }
 }

@@ -8,7 +8,7 @@ namespace WordCounter.TestTools
   public class RepeatCounterTest
   {
     [TestMethod]
-    public void GetInputs_True()
+    public void GetInputs_SetWordAndSentence_True()
     {
       //Arrange
       RepeatCounter testCounter = new RepeatCounter();
@@ -26,7 +26,7 @@ namespace WordCounter.TestTools
     }
 
     [TestMethod]
-    public void IsInputValid_false()
+    public void IsInputValid_IsInputValid_false()
     {
       //Arrange
       RepeatCounter testCounter = new RepeatCounter();
@@ -37,6 +37,22 @@ namespace WordCounter.TestTools
 
       //Assert
       Assert.AreEqual(false, isValid);
+    }
+
+    public void CountWords_CountWords_3()
+    {
+      //Arrange
+      RepeatCounter testCounter = new RepeatCounter();
+      string word = "Pizza";
+      string sentence = "pizza, Pizza, PIZZA";
+
+      //Act
+      testCounter.SetWord(word);
+      testCounter.SetSentence(sentence);
+      int counter = testCounter.CountWords(word, sentence);
+
+      //Assert
+      Assert.AreEqual(3, counter);
     }
   }
 }

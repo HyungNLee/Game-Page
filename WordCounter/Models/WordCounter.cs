@@ -52,35 +52,60 @@ namespace WordCounter
       return (sentence == "") ? false : true;
     }
 
-    public int CountWords(string word, string sentence)
+    public int CountWords()
     {
-      int counter = 0;
-      word = word.ToLower();
-      sentence = sentence.ToLower();
+// This way of counting will also count words within words and not full words.
+// Will keep in case of need of this functionality in future iterations.
+      // int counter = 0;
+      // word = word.ToLower();
+      // sentence = sentence.ToLower();
+      //
+      // for (int i = 0; i < sentence.Length; i++)
+      // {
+      //   if (sentence[i] == word[0])
+      //   {
+      //     int indexOfWord = 1;
+      //     int indexOfSentence = i + 1;
+      //     while (indexOfWord < word.Length)
+      //     {
+      //       if (sentence[indexOfSentence] != word[indexOfWord])
+      //       {
+      //         break;
+      //       }
+      //       else if (indexOfWord == word.Length - 1)
+      //       {
+      //         counter++;
+      //         break;
+      //       }
+      //       indexOfWord++;
+      //       indexOfSentence++;
+      //     }
+      //   }
+      // }
+      // return counter;
 
-      for (int i = 0; i < sentence.Length; i++)
+      string word = _word.ToLower();
+      string sentence = _sentence.ToLower();
+      string tempString = "";
+
+      foreach (char c in sentence)
       {
-        if (sentence[i] == word[0])
+        if (!char.IsPunctuation(c))
         {
-          int indexOfWord = 1;
-          int indexOfSentence = i + 1;
-          while (indexOfWord < word.Length)
-          {
-            if (sentence[indexOfSentence] != word[indexOfWord])
-            {
-              break;
-            }
-            else if (indexOfWord == word.Length - 1)
-            {
-              counter++;
-              break;
-            }
-            indexOfWord++;
-            indexOfSentence++;
-          }
+          tempString += c;
         }
       }
-      return counter;
+
+      string[] sentenceWords = tempString.Split(' ');
+      int count = 0;
+      foreach (string fullWord in sentenceWords)
+      {
+        if (fullWord.Equals(word))
+        {
+          count++;
+        }
+      }
+      return count;
     }
   }
 }

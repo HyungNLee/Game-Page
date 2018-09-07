@@ -64,7 +64,7 @@ namespace WordCounter.TestTools
       //Act
       testCounter.SetWord(word);
       testCounter.SetSentence(sentence);
-      int counter = testCounter.CountWords(word, sentence);
+      int counter = testCounter.CountWords();
 
       //Assert
       Assert.AreEqual(3, counter);

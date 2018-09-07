@@ -39,6 +39,7 @@ namespace WordCounter.TestTools
       Assert.AreEqual(false, isValid);
     }
 
+    [TestMethod]
     public void CountWords_CountWords_3()
     {
       //Arrange

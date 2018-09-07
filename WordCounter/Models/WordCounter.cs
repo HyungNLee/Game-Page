@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace WordCounter
 {
@@ -41,6 +42,35 @@ namespace WordCounter
       return isValidWord;
     }
 
-    
+    public int CountWords(string word, string sentence)
+    {
+      int counter = 0;
+      word = word.ToLower();
+      sentence = sentence.ToLower();
+
+      for (int i = 0; i < sentence.Length; i++)
+      {
+        if (sentence[i] == word[0])
+        {
+          int indexOfWord = 1;
+          int indexOfSentence = i + 1;
+          while (indexOfWord < word.Length)
+          {
+            if (sentence[indexOfSentence] != word[indexOfWord])
+            {
+              break;
+            }
+            else if (indexOfWord == word.Length - 1)
+            {
+              counter++;
+              break;
+            }
+            indexOfWord++;
+            indexOfSentence++;
+          }
+        }
+      }
+      return counter;
+    }
   }
 }

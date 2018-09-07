@@ -26,6 +26,20 @@ namespace WordCounter.TestTools
     }
 
     [TestMethod]
+    public void IsSentenceValid_IsSentenceValid_false()
+    {
+      //Arrange
+      RepeatCounter testCounter = new RepeatCounter();
+      string sentence = "";
+
+      //Act
+      bool isValid = testCounter.IsSentenceValid(sentence);
+
+      //Assert
+      Assert.AreEqual(false, isValid);
+    }
+
+    [TestMethod]
     public void IsInputValid_IsInputValid_false()
     {
       //Arrange

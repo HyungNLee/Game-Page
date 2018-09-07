@@ -31,6 +31,11 @@ namespace WordCounter
     public bool IsInputValid(string word)
     {
       bool isValidWord = true;
+      if (word == "")
+      {
+        isValidWord = false;
+        return isValidWord;
+      }
       foreach (char c in word)
       {
         if (char.IsPunctuation(c))
@@ -40,6 +45,11 @@ namespace WordCounter
         }
       }
       return isValidWord;
+    }
+
+    public bool IsSentenceValid(string sentence)
+    {
+      return (sentence == "") ? false : true;
     }
 
     public int CountWords(string word, string sentence)

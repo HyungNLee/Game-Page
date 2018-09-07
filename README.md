@@ -1,8 +1,10 @@
-#
+# Word Counter Program
 
 #### By Hyung Lee
 
 ## Description
+
+The user will enter a string input they want to check for and a string input they want to check in. This program will count how many times the initial input occurs in the second string input. It will display the number of occurrences after checking.
 
 ## Specifications
 
@@ -15,6 +17,9 @@
 
 ## Setup/Installation Requirements
 
+  - Clone this repository from https://github.com/HyungNLee/WordCounter.git
+  - Open up the project in your text editor to edit.
+  - Compile the WordCounter.cs file and execute the created WordCounter.exe to run the program.
 
 ## Known Bugs
 

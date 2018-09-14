@@ -1,8 +1,17 @@
 <h1>Word Counter Game</h1>
 
+<h3>Past Searches</h3>
+<ul>
+@foreach (KeyValuePair<string, string> input in Model)
+{
+  <li>Searched: @input.Key</li>
+  <li>In: @input.Value</li>
+  <br>
+}
+</ul>
 
 <p>Check to see how many times your word appears in your sentence<p>
-<form action="/wordcounter" method="post">
+<form action="/wordcounter/check" method="post">
   <div class="form-group">
     <label for="word">Word: </label>
     <input id="word" name="word" type="text" class="form-control">
@@ -13,3 +22,5 @@
   </div>
   <button type="submit" class="btn btn-info">Check!</button>
 </form>
+
+<a href="/"><button class="btn btn-info">Home Page</button></a>

@@ -1,4 +1,4 @@
-
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using WordCounter.Models;
 
@@ -9,10 +9,11 @@ namespace WordCounter.Controllers
     [HttpGet("/wordcounter")]
     public ActionResult Index()
     {
-      return View();
+      Dictionary<string, string> pastInputs = RepeatCounter.GetPastInputs();
+      return View(pastInputs);
     }
 
-    [HttpPost("/wordcounter")]
+    [HttpPost("/wordcounter/check")]
     public ActionResult Check()
     {
       RepeatCounter newCheck = new RepeatCounter(Request.Form["word"], Request.Form["sentence"]);

@@ -1,0 +1,17 @@
+<h1>Word Counter Game</h1>
+
+<h3>@Model.GetResults()</h3>
+
+
+<p>Check to see how many times your word appears in your sentence<p>
+<form action="/wordcounter" method="post">
+  <div class="form-group">
+    <label for="word">Word: </label>
+    <input id="word" name="word" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="sentence">Sentence: </label>
+    <input id="sentence" name="sentence" type="text" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-info">Check!</button>
+</form>

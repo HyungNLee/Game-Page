@@ -1,0 +1,29 @@
+@{
+  Layout = "_LeapYearLayout";
+}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Leap Year Checker</h1>
+  </div>
+
+  <h3>Past Searches</h3>
+  <ul>
+  @foreach (var search in Model)
+  {
+    <li>Searched: @search.GetYear()</li>
+    <li>Result: @search.GetResults()</li>
+    <br>
+  }
+  </ul>
+
+  <p>Input a year to check if it is a leap year.<p>
+  <form action="/leapyear/check" method="post">
+    <div class="form-group">
+      <label for="year">Year: </label>
+      <input id="year" name="year" type="number" step="1" min="0" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info">Check!</button>
+  </form>
+  <br>
+
+</div>

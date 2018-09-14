@@ -1,0 +1,26 @@
+@{
+  Layout = "_LeapYearLayout";
+}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Leap Year Check</h1>
+  </div>
+  <br>
+  <br>
+  <h3>@Model.GetResults()</h3>
+  <br>
+  <br>
+  <p>Check again<p>
+  <form action="/leapyear/check" method="post">
+    <div class="form-group">
+      <label for="year">Year: </label>
+      <input id="year" name="year" type="number" step="1" min="0" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info">Check!</button>
+  </form>
+  <br>
+  <a href="/leapyear"><button class="btn btn-danger">Leap Year Home Page</button></a>
+  <br>
+  <br>
+
+  </div>

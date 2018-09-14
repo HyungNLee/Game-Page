@@ -8,18 +8,18 @@ A website that is used to access games that are linked to the page. Currently li
 
 ## Specifications
 
-*Word Counter Game*
+
 | Specs    |  Input | Expected Output    
-| ------------- |------------- |:-------------:|
+| ------------- |------------- |-------------|
+| WORD COUNTER GAME | *********** | *********** |
 | Take the word input and sentence input from user and store it. | Pizza | N/A
 | Check to see if the word input is valid with no punctuation. | Pizza. | "Please enter a valid input with no punctuations."
 | Check to see how many times the word occurs inside the sentence and show that number. | Pizza, pizza Pizza PIZZA | Word Counter: 3.
-
-*Leap Year Checker*
-| Specs    |  Input | Expected Output    
-| ------------- |------------- |:-------------:|
-| Take the year input and store it. | 2000 | N/A
+| ------------- |------------- |-------------|
+| LEAP YEAR CHECKER | *********** | *********** |
+| Take the year input and store it. | 2000 | N/A 
 | Check to see if the year is a leap year. | 2000 | "2000 is a leap year."
+
 
 
 ## Setup/Installation Requirements

@@ -14,6 +14,8 @@ namespace WordCounter.Models
     //The display results.
     private string _results = "";
 
+    //Need to add static dictionary to keep track of all past searches.
+
     public RepeatCounter(string inputWord, string inputSentence)
     {
       _word = inputWord;

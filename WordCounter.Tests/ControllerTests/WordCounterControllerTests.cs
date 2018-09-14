@@ -21,5 +21,19 @@ namespace WordCounter.Tests
       //Assert
       Assert.IsInstanceOfType(indexView, typeof(ViewResult));
     }
+
+    // [TestMethod]
+    // public void Check_HasCorrectModelType_RepeatCounter()
+    // {
+    //   //Arrange
+    //   WordCounterController controller = new WordCounterController();
+    //   ViewResult checkView = controller.Check() as ViewResult;
+    //
+    //   //Act
+    //   ViewResult result = checkView.ViewData.Model;
+    //
+    //   //Assert
+    //   Assert.IsInstanceOfType(result, typeof(RepeatCounter));
+    // }
   }
 }

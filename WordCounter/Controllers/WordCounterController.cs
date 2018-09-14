@@ -9,7 +9,7 @@ namespace WordCounter.Controllers
     [HttpGet("/wordcounter")]
     public ActionResult Index()
     {
-      Dictionary<string, string> pastInputs = RepeatCounter.GetPastInputs();
+      List<RepeatCounter> pastInputs = RepeatCounter.GetPastInputs();
       return View(pastInputs);
     }
 

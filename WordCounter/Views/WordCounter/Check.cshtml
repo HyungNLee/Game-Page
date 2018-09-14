@@ -1,21 +1,28 @@
-<h1>Word Counter Game</h1>
-
-<h3>@Model.GetResults()</h3>
-<br>
-<br>
-<br>
-<p>Check again<p>
-<form action="/wordcounter/check" method="post">
-  <div class="form-group">
-    <label for="word">Word: </label>
-    <input id="word" name="word" type="text" class="form-control">
+@{
+  Layout = "_WordCounterLayout";
+}
+<div class="container">
+  <div class="jumbotron">
+    <h1>Word Counter Game</h1>
   </div>
-  <div class="form-group">
-    <label for="sentence">Sentence: </label>
-    <input id="sentence" name="sentence" type="text" class="form-control">
-  </div>
-  <button type="submit" class="btn btn-info">Check!</button>
-</form>
+  <h3>@Model.GetResults()</h3>
+  <br>
+  <br>
+  <br>
+  <p>Check again<p>
+  <form action="/wordcounter/check" method="post">
+    <div class="form-group">
+      <label for="word">Word: </label>
+      <input id="word" name="word" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="sentence">Sentence: </label>
+      <input id="sentence" name="sentence" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info">Check!</button>
+  </form>
 
-<a href="/wordcounter"><button class="btn btn-info">Word Counter Home Page</button></a>
-<a href="/"><button class="btn btn-info">Home Page</button></a>
+  <a href="/wordcounter"><button class="btn btn-info">Word Counter Home Page</button></a>
+  <a href="/"><button class="btn btn-info">Home Page</button></a>
+
+  </div>

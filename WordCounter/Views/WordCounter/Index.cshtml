@@ -1,26 +1,34 @@
-<h1>Word Counter Game</h1>
-
-<h3>Past Searches</h3>
-<ul>
-@foreach (KeyValuePair<string, string> input in Model)
-{
-  <li>Searched: @input.Key</li>
-  <li>In: @input.Value</li>
-  <br>
+@{
+  Layout = "_WordCounterLayout";
 }
-</ul>
-
-<p>Check to see how many times your word appears in your sentence<p>
-<form action="/wordcounter/check" method="post">
-  <div class="form-group">
-    <label for="word">Word: </label>
-    <input id="word" name="word" type="text" class="form-control">
+<div class="container">
+  <div class="jumbotron">
+    <h1>Word Counter Game</h1>
   </div>
-  <div class="form-group">
-    <label for="sentence">Sentence: </label>
-    <input id="sentence" name="sentence" type="text" class="form-control">
-  </div>
-  <button type="submit" class="btn btn-info">Check!</button>
-</form>
 
-<a href="/"><button class="btn btn-info">Home Page</button></a>
+  <h3>Past Searches</h3>
+  <ul>
+  @foreach (var search in Model)
+  {
+    <li>Searched: @search.GetWord()</li>
+    <li>In: @search.GetSentence()</li>
+    <br>
+  }
+  </ul>
+
+  <p>Check to see how many times your word appears in your sentence<p>
+  <form action="/wordcounter/check" method="post">
+    <div class="form-group">
+      <label for="word">Word: </label>
+      <input id="word" name="word" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="sentence">Sentence: </label>
+      <input id="sentence" name="sentence" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info">Check!</button>
+  </form>
+
+  <a href="/"><button class="btn btn-info">Home Page</button></a>
+
+</div>

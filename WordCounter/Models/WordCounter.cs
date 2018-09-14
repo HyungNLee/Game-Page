@@ -15,7 +15,7 @@ namespace WordCounter.Models
     private string _results = "";
 
     //Need to add static dictionary to keep track of all past searches.
-    private static Dictionary <string, string> _pastInputs = new Dictionary <string, string>();
+    private static List<RepeatCounter> _pastInputs = new List<RepeatCounter>{};
 
     public RepeatCounter(string inputWord, string inputSentence)
     {
@@ -54,16 +54,16 @@ namespace WordCounter.Models
       return _results;
     }
 
-    public static Dictionary<string, string> GetPastInputs()
+    public static List<RepeatCounter> GetPastInputs()
     {
       return _pastInputs;
     }
 
     private void DisplayResults()
     {
-      if (IsInputValid(_word) && IsSentenceValid(_sentence))
+      if (IsInputValid(_word) && IsSentenceValid(_sentence) && (_word.Length <= _sentence.Length))
       {
-        _pastInputs.Add(_word, _sentence);
+        _pastInputs.Add(this);
         CountWords();
         _results = "The word '" + _word + "' has appears in your sentence " + _count + " times.";
       }

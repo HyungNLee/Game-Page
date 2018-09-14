@@ -7,14 +7,9 @@ namespace WordCounter.Models
   {
     private string _word;
     private string _sentence;
-
-    //Number of times word appears in the sentence.
     private int _count = 0;
-
-    //The display results.
     private string _results = "";
 
-    //Need to add static dictionary to keep track of all past searches.
     private static List<RepeatCounter> _pastInputs = new List<RepeatCounter>{};
 
     public RepeatCounter(string inputWord, string inputSentence)

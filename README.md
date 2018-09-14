@@ -1,25 +1,32 @@
-# Word Counter Program
+# Game Center Website
 
 #### By Hyung Lee
 
 ## Description
 
-The user will enter a string input they want to check for and a string input they want to check in. This program will count how many times the initial input occurs in the second string input. It will display the number of occurrences after checking.
+A website that is used to access games that are linked to the page. Currently links a word counter game and a leap year checker.
 
 ## Specifications
 
+*Word Counter Game*
 | Specs    |  Input | Expected Output    
 | ------------- |------------- |:-------------:|
 | Take the word input and sentence input from user and store it. | Pizza | N/A
 | Check to see if the word input is valid with no punctuation. | Pizza. | "Please enter a valid input with no punctuations."
 | Check to see how many times the word occurs inside the sentence and show that number. | Pizza, pizza Pizza PIZZA | Word Counter: 3.
 
+*Leap Year Checker*
+| Specs    |  Input | Expected Output    
+| ------------- |------------- |:-------------:|
+| Take the year input and store it. | 2000 | N/A
+| Check to see if the year is a leap year. | 2000 | "2000 is a leap year."
+
 
 ## Setup/Installation Requirements
 
-  - Clone this repository from https://github.com/HyungNLee/WordCounter.git
+  - Clone this repository from https://github.com/HyungNLee/Game-Page.git
   - Open up the project in your text editor to edit.
-  - Compile the WordCounter.cs file and execute the created WordCounter.exe to run the program.
+  - Navigate to WordCounter.Solution/WordCounter folder in your terminal. Type 'dotnet run' to run a localhost. Navigate to 'http://localhost:5000/' to interact with the website.
 
 ## Known Bugs
 
@@ -36,7 +43,9 @@ None known in this version.
   - Mono
   - Git
   - GitHub
-
+  - CSS
+  - HTML
+  
 This software is licensed under the MIT license.
 
 Copyright (c) 2018 **Hyung Lee**

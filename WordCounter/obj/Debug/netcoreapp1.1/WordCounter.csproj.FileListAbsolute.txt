@@ -4,3 +4,5 @@
 /Users/Guest/Desktop/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.AssemblyInfo.cs
 /Users/Guest/Desktop/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.dll
 /Users/Guest/Desktop/WordCounter.Solution/WordCounter/obj/Debug/netcoreapp1.1/WordCounter.pdb
+/Users/Guest/Desktop/WordCounter.Solution/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.runtimeconfig.json
+/Users/Guest/Desktop/WordCounter.Solution/WordCounter/bin/Debug/netcoreapp1.1/WordCounter.runtimeconfig.dev.json

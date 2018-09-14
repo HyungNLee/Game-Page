@@ -1,12 +1,25 @@
 using System;
 using System.Collections.Generic;
 
-namespace WordCounter
+namespace WordCounter.Models
 {
   public class RepeatCounter
   {
     private string _word;
     private string _sentence;
+
+    //Number of times word appears in the sentence.
+    private int _count = 0;
+
+    //The display results.
+    private string _results = "";
+
+    public RepeatCounter(string inputWord, string inputSentence)
+    {
+      _word = inputWord;
+      _sentence = inputSentence;
+      DisplayResults();
+    }
 
     public void SetWord(string newWord)
     {
@@ -28,7 +41,30 @@ namespace WordCounter
       return _sentence;
     }
 
-    public bool IsInputValid(string word)
+    public int GetCount()
+    {
+      return _count;
+    }
+
+    public string GetResults()
+    {
+      return _results;
+    }
+
+    private void DisplayResults()
+    {
+      if (IsInputValid(_word) && IsSentenceValid(_sentence))
+      {
+        CountWords();
+        _results = "The word '" + _word + "' has appears in your sentence " + _count + " times.";
+      }
+      else
+      {
+        _results = "Please enter a valid word and sentence.";
+      }
+    }
+
+    private bool IsInputValid(string word)
     {
       bool isValidWord = true;
       if (word == "")
@@ -36,6 +72,7 @@ namespace WordCounter
         isValidWord = false;
         return isValidWord;
       }
+
       foreach (char c in word)
       {
         if (char.IsPunctuation(c))
@@ -47,12 +84,12 @@ namespace WordCounter
       return isValidWord;
     }
 
-    public bool IsSentenceValid(string sentence)
+    private bool IsSentenceValid(string sentence)
     {
       return (sentence == "") ? false : true;
     }
 
-    public int CountWords()
+    private void CountWords()
     {
 // This way of counting will also count words within words and not full words.
 // Will keep in case of need of this functionality in future iterations.
@@ -97,15 +134,14 @@ namespace WordCounter
       }
 
       string[] sentenceWords = tempString.Split(' ');
-      int count = 0;
+      // int count = 0;
       foreach (string fullWord in sentenceWords)
       {
         if (fullWord.Equals(word))
         {
-          count++;
+          _count++;
         }
       }
-      return count;
     }
   }
 }
